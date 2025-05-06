@@ -132,20 +132,20 @@
       <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_02_HandlingPreparingSalesListTable" sap:VirtualizedContainerService.HintSize="1458.8000000000002,4189.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_02_HandlingPreparingSalesListTable" sap:VirtualizedContainerService.HintSize="1458.8000000000002,7363.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap2010:Annotation.AnnotationText="In this sequence, all the necessary processing will be carried out to start creating and sending sales reports to each salesperson." DisplayName="Handling and Preparing Sales List Table" sap:VirtualizedContainerService.HintSize="638.4,4166.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap2010:Annotation.AnnotationText="In this sequence, all the necessary processing will be carried out to start creating and sending sales reports to each salesperson." DisplayName="Handling and Preparing Sales List Table" sap:VirtualizedContainerService.HintSize="638.4,7340" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Treatment for sales list table" sap:VirtualizedContainerService.HintSize="604.8,3991.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+      <Sequence DisplayName="Treatment for sales list table" sap:VirtualizedContainerService.HintSize="604.8,5525.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
         <Sequence.Variables>
           <Variable x:TypeArguments="sd:DataTable" Name="FilteredSalesListDataTable" />
           <Variable x:TypeArguments="x:String" Name="currencyConvertAPI" />
@@ -165,7 +165,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:LogMessage>
-        <Sequence DisplayName="Entering address" sap:VirtualizedContainerService.HintSize="571.2,1105.6" sap2010:WorkflowViewState.IdRef="Sequence_24">
+        <Sequence DisplayName="Entering address" sap:VirtualizedContainerService.HintSize="571.2,1416" sap2010:WorkflowViewState.IdRef="Sequence_24">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="viaCEPAPI" />
           </Sequence.Variables>
@@ -184,13 +184,13 @@
               <InArgument x:TypeArguments="x:String">[in_Config("viaCEPAPI").ToString]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[io_dtSalesList]" DisplayName="For Each POSTAL CODE Row in  Sales List Data Table" sap:VirtualizedContainerService.HintSize="513.6,725.6" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[io_dtSalesList]" DisplayName="For Each POSTAL CODE Row in  Sales List Data Table" sap:VirtualizedContainerService.HintSize="513.6,1036" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
             <ui:ForEachRow.Body>
               <ActivityAction x:TypeArguments="sd:DataRow">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="sd:DataRow" Name="salesInvoice" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="For Each POSTAL CODE Row in  Sales List Data Table" sap:VirtualizedContainerService.HintSize="512,552.8" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                <Sequence DisplayName="For Each POSTAL CODE Row in  Sales List Data Table" sap:VirtualizedContainerService.HintSize="512,863.2" sap2010:WorkflowViewState.IdRef="Sequence_27">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="postalCode" />
                     <Variable x:TypeArguments="njl:JObject" Name="AddressJson" />
@@ -209,7 +209,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:MultipleAssign DisplayName="Multiple Assign - Treating CEP" sap:VirtualizedContainerService.HintSize="478.4,212" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
+                  <ui:MultipleAssign DisplayName="Multiple Assign - Treating CEP" sap:VirtualizedContainerService.HintSize="478.4,56.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
                     <ui:MultipleAssign.AssignOperations>
                       <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_32">
@@ -238,14 +238,26 @@
                         </ui:AssignOperation>
                       </scg:List>
                     </ui:MultipleAssign.AssignOperations>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
                   </ui:MultipleAssign>
                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GettingAddressAPICall - Invoke Workflow File (Tools\GettingAddressAPICall.xaml)" sap:VirtualizedContainerService.HintSize="478.4,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Tools\GettingAddressAPICall.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <OutArgument x:TypeArguments="njl:JObject" x:Key="out_AddressJson">[AddressJson]</OutArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_viaCEPAPI">[salesPostalCodeAPI]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
                   </ui:InvokeWorkflowFile>
-                  <ui:MultipleAssign DisplayName="Multiple Assigning address" sap:VirtualizedContainerService.HintSize="478.4,56.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
+                  <ui:MultipleAssign DisplayName="Multiple Assigning address" sap:VirtualizedContainerService.HintSize="478.4,367.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
                     <ui:MultipleAssign.AssignOperations>
                       <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_35">
@@ -316,12 +328,12 @@
                     </ui:MultipleAssign.AssignOperations>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:MultipleAssign>
-                  <ui:MultipleAssign DisplayName="Multiple Assigning address to data table" sap:VirtualizedContainerService.HintSize="478.4,48" sap2010:WorkflowViewState.IdRef="MultipleAssign_8">
+                  <ui:MultipleAssign DisplayName="Multiple Assigning address to data table" sap:VirtualizedContainerService.HintSize="478.4,203.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_8">
                     <ui:MultipleAssign.AssignOperations>
                       <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_43">
@@ -352,7 +364,7 @@
                     </ui:MultipleAssign.AssignOperations>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
@@ -362,7 +374,7 @@
             </ui:ForEachRow.Body>
           </ui:ForEachRow>
         </Sequence>
-        <Sequence DisplayName="input Monetary Values" sap:VirtualizedContainerService.HintSize="571.2,2453.6" sap2010:WorkflowViewState.IdRef="Sequence_28">
+        <Sequence DisplayName="input Monetary Values" sap:VirtualizedContainerService.HintSize="571.2,3677.6" sap2010:WorkflowViewState.IdRef="Sequence_28">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -397,13 +409,13 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:AddDataColumn>
-          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[io_dtSalesList]" DisplayName="For Each Sale Invoice Row in Sales List Data Table" sap:VirtualizedContainerService.HintSize="537.6,1635.2" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[io_dtSalesList]" DisplayName="For Each Sale Invoice Row in Sales List Data Table" sap:VirtualizedContainerService.HintSize="537.6,2859.2" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
             <ui:ForEachRow.Body>
               <ActivityAction x:TypeArguments="sd:DataRow">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="sd:DataRow" Name="saleInvoice" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="For Each Sale Invoice Row in Sales List Data Table" sap:VirtualizedContainerService.HintSize="536,1453.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <Sequence DisplayName="For Each Sale Invoice Row in Sales List Data Table" sap:VirtualizedContainerService.HintSize="536,2677.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="dateString" />
                   </Sequence.Variables>
@@ -413,7 +425,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="502.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Starting invoice: &quot; + saleInvoice(&quot;INVOICE&quot;).ToString]" />
-                  <Sequence DisplayName="Converting currency values" sap:VirtualizedContainerService.HintSize="502.4,56.8" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                  <Sequence DisplayName="Converting currency values" sap:VirtualizedContainerService.HintSize="502.4,367.2" sap2010:WorkflowViewState.IdRef="Sequence_21">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:Double" Name="currencyBRValue" />
                       <Variable x:TypeArguments="x:String" Name="currencyName" />
@@ -424,11 +436,11 @@
                     </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign DisplayName="Assign Currency Name" sap:VirtualizedContainerService.HintSize="513.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_13">
+                    <Assign DisplayName="Assign Currency Name" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_13">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[currencyName]</OutArgument>
                       </Assign.To>
@@ -436,10 +448,10 @@
                         <InArgument x:TypeArguments="x:String">[saleInvoice("UNIT COST").ToString.Split(" "c).Last + "BRL.bid"]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <If Condition="[currencyName.Contains(&quot;FJD&quot;)]" DisplayName="If Currency Name Contains FJD" sap:VirtualizedContainerService.HintSize="513.6,1069.6" sap2010:WorkflowViewState.IdRef="If_5">
+                    <If Condition="[currencyName.Contains(&quot;FJD&quot;)]" DisplayName="If Currency Name Contains FJD" sap:VirtualizedContainerService.HintSize="433.6,56.8" sap2010:WorkflowViewState.IdRef="If_5">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
@@ -637,7 +649,7 @@
                         </Sequence>
                       </If.Else>
                     </If>
-                    <Assign DisplayName="Assign Date and time of conversion" sap:VirtualizedContainerService.HintSize="513.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_14">
+                    <Assign DisplayName="Assign Date and time of conversion" sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_14">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Object">[saleInvoice("Data/Hora Conversão do Câmbio")]</OutArgument>
                       </Assign.To>
@@ -646,10 +658,10 @@
                       </Assign.Value>
                     </Assign>
                   </Sequence>
-                  <Sequence DisplayName="Checking Seller ID Pattern" sap:VirtualizedContainerService.HintSize="502.4,56.8" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                  <Sequence DisplayName="Checking Seller ID Pattern" sap:VirtualizedContainerService.HintSize="502.4,520" sap2010:WorkflowViewState.IdRef="Sequence_14">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
@@ -718,7 +730,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign DisplayName="Assign one to the year" sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_4">
+                          <Assign DisplayName="Assign yaer to the column year " sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_4">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Object">[saleInvoice("Ano")]</OutArgument>
                             </Assign.To>
@@ -735,7 +747,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign DisplayName="Assign zero to the year" sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_5">
+                          <Assign DisplayName="Assign zero to the column year " sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_5">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Object">[saleInvoice("Ano")]</OutArgument>
                             </Assign.To>
@@ -746,7 +758,7 @@
                         </Sequence>
                       </If.Else>
                     </If>
-                    <If Condition="[Int32.Parse(saleInvoice(&quot;Ano&quot;).ToString) &lt; 2018]" DisplayName="If year is less than 208" sap:VirtualizedContainerService.HintSize="468.8,384" sap2010:WorkflowViewState.IdRef="If_4">
+                    <If Condition="[Int32.Parse(saleInvoice(&quot;Ano&quot;).ToString) &lt; 2018]" DisplayName="If year is less than 2018" sap:VirtualizedContainerService.HintSize="468.8,384" sap2010:WorkflowViewState.IdRef="If_4">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -781,10 +793,10 @@
                       </If.Else>
                     </If>
                   </Sequence>
-                  <Sequence DisplayName="Checking invoice pattern" sap:VirtualizedContainerService.HintSize="502.4,48" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                  <Sequence DisplayName="Checking invoice pattern" sap:VirtualizedContainerService.HintSize="502.4,498.4" sap2010:WorkflowViewState.IdRef="Sequence_17">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
@@ -856,13 +868,13 @@
         </Sequence>
         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="571.2,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Sales list processing completed&quot;]" />
       </Sequence>
-      <Sequence DisplayName="Treatment for vendor list" sap:VirtualizedContainerService.HintSize="604.8,48" sap2010:WorkflowViewState.IdRef="Sequence_13">
+      <Sequence DisplayName="Treatment for vendor list" sap:VirtualizedContainerService.HintSize="604.8,1687.2" sap2010:WorkflowViewState.IdRef="Sequence_13">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="vendorsListPath" />
         </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
@@ -900,7 +912,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ueab:ExcelProcessScopeX>
-        <Assign sap2010:Annotation.AnnotationText="In this assignment, LINQ is used to filter out incorrect IDs in the list of vendors." DisplayName="Assign filtering to data table" sap:VirtualizedContainerService.HintSize="510.4,116.8" sap2010:WorkflowViewState.IdRef="Assign_6">
+        <Assign sap2010:Annotation.AnnotationText="In this assignment, LINQ is used to filter out incorrect IDs in the list of vendors." DisplayName="Assign filtering to data table" sap:VirtualizedContainerService.HintSize="510.4,157.6" sap2010:WorkflowViewState.IdRef="Assign_6">
           <Assign.To>
             <OutArgument x:TypeArguments="sd:DataTable">[out_dtVendorList]</OutArgument>
           </Assign.To>
@@ -910,12 +922,12 @@
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </Assign>
-        <ui:FilterDataTable DataTable="[out_dtVendorList]" DisplayName="Filter Vendos List Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="510.4,56.8" sap2010:WorkflowViewState.IdRef="FilterDataTable_4" OutputDataTable="[out_dtVendorList]" SelectColumnsMode="Remove">
+        <ui:FilterDataTable DataTable="[out_dtVendorList]" DisplayName="Filter Vendos List Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="510.4,194.4" sap2010:WorkflowViewState.IdRef="FilterDataTable_4" OutputDataTable="[out_dtVendorList]" SelectColumnsMode="Remove">
           <ui:FilterDataTable.Filters>
             <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
               <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
@@ -935,7 +947,7 @@
           </ui:FilterDataTable.SelectColumns>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>

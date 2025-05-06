@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Digite um CEP ou um End…",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "J4-sZRrwiEqQpLyivDMRMw",
+  "Reference": "tvx0F0oAw0OMkqhcwxlwIw/J4-sZRrwiEqQpLyivDMRMw",
+  "ParentRef": "tvx0F0oAw0OMkqhcwxlwIw/fR-XBxnEuEK2QzCy8CGuEw",
+  "Created": "2025-05-03T20:19:47.3809692Z",
+  "Updated": "2025-05-03T20:19:47.3809692Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.2.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

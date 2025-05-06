@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="ZnYscIWieUuD5oEgndgSjg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="buscacepinter.correios.com.br/app/endereco/index.php" CVScreenId="2ec93ee7-2f7e-48bd-88f2-d603dcd11c28" CvElementArea="493, 500, 538, 57" CvType="InputBox" DesignTimeRectangle="493, 501, 536, 52" DesignTimeScaleFactor="1.25" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='endereco' tag='INPUT' type='text' class='' placeholder='Não utilize nº de casa/apto/lote/prédio ou abreviação.' aaname='Digite um CEP ou um Endereço:' /&gt;" Guid="7d3850f0-fae1-4571-a782-1d4cc3b9a6b7" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Busca CEP' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="2ec93ee7-2f7e-48bd-88f2-d603dcd11c28" CvTextArea="491, 470, 291, 23" CvTextArgument="Digite um CEP ou um Endereço:*" CvType="Text" DesignTimeRectangle="493, 468, 290, 23" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='Digite um CEP ou um Endereço:' check:innerText='Digite um CEP ou um Endereço:' /&gt;" Guid="cb18e4e2-a7bc-4eea-9f6b-dbe67938154e" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="b6ff0ff9a0c0f9263f32a8b0fd2d65d5.png" xmlns="">0SKzpjXxWAE2wIk9qaR3RKw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

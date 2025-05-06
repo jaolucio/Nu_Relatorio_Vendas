@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="5cXWrC_rbUaW4O5hrtPehg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="buscacepinter.correios.com.br/app/endereco/index.php" CVScreenId="f2a64f95-e207-4607-94d5-20f0be2c77ec" CvElementArea="490, 849, 104, 49" CvTextArea="512, 864, 61, 18" CvTextArgument="Buscar" CvType="Button" DesignTimeRectangle="493, 850, 100, 45" DesignTimeScaleFactor="1.25" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='btn_pesquisar' tag='BUTTON' type='' class='primario' aaname='Buscar' check:innerText='Buscar' /&gt;" Guid="e38bacc0-73bf-4dba-b2ac-b86f9f49cbd8" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Busca CEP' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="c92be42eac52f45178e9a570fc55f501.png" xmlns="">0LiVG8NXxNEa1YrQqnmsOMQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
